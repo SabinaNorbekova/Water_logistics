@@ -1,0 +1,21 @@
+{
+  "name": "1-lesson_home",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "start: dev": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.19.2"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}
