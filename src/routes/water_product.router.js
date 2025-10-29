@@ -1,12 +1,12 @@
 import { Router } from "express"
-
+import { waterProductController } from "../controllers/water_product.controller.js"
 
 const water_productRouter=Router()
 
-water_productRouter.get("/", getAllWater_product)
-water_productRouter.get("/:id", getOneWater_product)
-water_productRouter.post("/", createWater_product)
-water_productRouter.put("/:id", updateWater_product)
-water_productRouter.delete("/:id", removeWater_product)
+water_productRouter.get("/", waterProductController.getAll)
+water_productRouter.get("/:id", waterProductController.getOne)
+water_productRouter.post("/", waterProductController.create)
+water_productRouter.put("/:id", waterProductController.update)
+water_productRouter.delete("/:id", waterProductController.delete)
 
 export default water_productRouter 
