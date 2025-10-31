@@ -1,12 +1,12 @@
 import { Router } from "express"
-import { getAll,getOne,create,update,delete } from "../controllers/payment.controller"
+import { paymentController } from "../controllers/payment.controller.js"
 
 const paymentRouter=Router()
 
-paymentRouter.get("/", getAll)
-paymentRouter.get("/:id", getOne)
-paymentRouter.post("/", create)
-paymentRouter.put("/:id", update)
-paymentRouter.delete("/:id", delete)
+paymentRouter.get("/", paymentController.getAll)
+paymentRouter.get("/:id", paymentController.getOne)
+paymentRouter.post("/", paymentController.create)
+paymentRouter.put("/:id", paymentController.update)
+paymentRouter.delete("/:id", paymentController.delete)
 
 export default paymentRouter 

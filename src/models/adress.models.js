@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose"
 
-const adressSchema = new Schema({
+const addressSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -25,6 +25,6 @@ const adressSchema = new Schema({
     }
 }, { versionKey: false, timestamps: true })
 
-const adressModel = model("address", adressSchema)
+const addressModel = model("address", addressSchema)
 
-export default adressModel
+export default addressModel

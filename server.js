@@ -1,23 +1,28 @@
-import express from "express"
-import mongoose from "mongoose"
-import mainRouter from "./src/routes/index.js"
+import 'dotenv/config';
+import express from 'express';
+import { dbconnect } from './src/db/index.js';
+import mainRouter from './src/routes/index.js';
+import { errorHandler } from './src/helper/errorHandler.js';
 
-const app = express()
-app.use(express.json())
-const PORT = 4000
+const app = express();
 
-app.use("/", mainRouter)
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true }));
 
-async function bootstrap(params) {
-    try {
-        await mongoose.connect("mogodb://localhost:27017")
-        console.log(`Mongodb connnected succesfully`)
-        app.listen(PORT, () => {
-            console.log(`Server is running on port ${PORT}`)
-        })
-    } catch (err) {
-        console.log(err);
-    }
+app.use('/api/v1', mainRouter);   
+app.use(errorHandler);            
+
+const PORT = process.env.PORT || 4000;
+
+async function start() {
+  try {
+    await dbconnect();
+    console.log('MongoDB connected');
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  } catch (err) {
+    console.error('Failed to start server:', err);
+    process.exit(1);
+  }
 }
 
-bootstrap()
+start();

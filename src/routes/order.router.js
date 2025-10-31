@@ -1,12 +1,11 @@
 import { Router } from "express"
-import { getAll,getOne,create,update,delete } from "../controllers/order.controller"
-
+import { orderController } from "../controllers/order.controller.js"
 const orderRouter=Router()
 
-orderRouter.get("/", getAll)
-orderRouter.get("/:id", getOne)
-orderRouter.post("/", create)
-orderRouter.put("/:id", update)
-orderRouter.delete("/:id", delete)
+orderRouter.get("/", orderController.getAll)
+orderRouter.get("/:id", orderController.getOne)
+orderRouter.post("/", orderController.create)
+orderRouter.put("/:id", orderController.update)
+orderRouter.delete("/:id", orderController.delete)
 
 export default orderRouter 

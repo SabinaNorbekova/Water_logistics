@@ -1,4 +1,4 @@
-import customerModel from '../models/customer.models.js';
+import customerModel from '../models/customer.model.js';
 import { ApiError } from '../helper/errorMessage.js';
 import { createCRUDController } from './base.controller.js';
 

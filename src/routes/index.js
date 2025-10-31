@@ -12,12 +12,12 @@ import water_productRouter from "./water_product.router.js";
 const mainRouter=Router()
 
 mainRouter.use("/address", addressRouter)
-mainRouter.use("/custiomer", customerRouter)
-mainRouter.use("delivery_staff", delivery_staffRouter)
-mainRouter.use("district", districtRouter)
-mainRouter.use("order_item", order_itemRouter)
-mainRouter.use("order", orderRouter)
-mainRouter.use("payment", paymentRouter)
-mainRouter.use("water_product", water_productRouter)
+mainRouter.use("/customer", customerRouter)
+mainRouter.use("/delivery_staff", delivery_staffRouter)
+mainRouter.use("/district", districtRouter)
+mainRouter.use("/order_item", order_itemRouter)
+mainRouter.use("/order", orderRouter)
+mainRouter.use("/payment", paymentRouter)
+mainRouter.use("/water_product", water_productRouter)
 
 export default mainRouter
